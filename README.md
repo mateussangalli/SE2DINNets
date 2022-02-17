@@ -15,4 +15,4 @@ unzip mnist_rotation_new.zip
 python prepare_datasets.py
 ```
 
-Then run train_SE2DINNets.py to train a model based on differential equivariants of SE(2)
+Then run train_SE2DINNets.py to train a model based on differential equivariants of SE(2).
