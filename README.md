@@ -1,5 +1,5 @@
 # SE2DINNets
-Accompanying code for the paper "DIFFERENTIAL INVARIANTS NETWORKS FOR SE(2)-EQUIVARIANCE" to be submitted at ICIP2022
+Accompanying code for the paper "DIFFERENTIAL INVARIANTS FOR SE(2)-EQUIVARIANT NETWORKS" to be submitted at ICIP2022
 
 To download and prepare the datasets do:
 
