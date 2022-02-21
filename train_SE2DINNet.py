@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 import os
 import argparse
 
+from SE2DIN import *
+
 
 from load_data import load_data
 
@@ -52,7 +54,7 @@ else:
 def se2din_block(n_in, n_out, sigma, width, order=2, dropout=0, weight_decay=0):
   block = tf.keras.models.Sequential()
   block.add(layers.Input((None, None, n_in)))
-  block.add(DISE2(sigma, width, order=order))
+  block.add(SE2DIN(sigma, width, order=order))
   block.add(layers.BatchNormalization(beta_regularizer=regularizers.l2(weight_decay),
                 gamma_regularizer=regularizers.l2(weight_decay)))
 
