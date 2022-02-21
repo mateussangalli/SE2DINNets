@@ -16,7 +16,7 @@ class SE2DIN(tf.keras.layers.Layer):
     self.width = width
     self.padding = padding
     self.order = int(order)
-    # assuming channel last
+    # assuming channels last
     self.channel_axis = -1
     
     
