@@ -16,7 +16,7 @@ class SE2DIN(tf.keras.layers.Layer):
     self.width = width
     self.padding = padding
     self.order = int(order)
-    # for we are assuming channel last
+    # assuming channel last
     self.channel_axis = -1
     
     
@@ -45,7 +45,6 @@ class SE2DIN(tf.keras.layers.Layer):
     self.gx = [tf.constant(p, dtype=tf.float32) for p in self.gx]
     self.gy = [tf.constant(p, dtype=tf.float32) for p in self.gy]
 
-    # Be sure to call this at the end
     super(SE2DIN, self).build(input_shape)
   
 
