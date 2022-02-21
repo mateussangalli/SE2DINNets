@@ -19,16 +19,12 @@ model_dir = 'models'
 
 
 
-parser = argparse.ArgumentParser(description='trains a SE2DINNet with the specified parameters(some
-                                                parts of the architecture are fixed)')
+parser = argparse.ArgumentParser(description='trains a SE2DINNet with the specified parameters(some parts of the architecture are fixed)')
 parser.add_argument('-o', '--order', type=int, default=2, help='order of the differential invariants')
-parser.add_argument('-d', '--dropout', type=int, default=30, help='dropout rate in percentage
-                                                                    between 1 x 1 convolutions')
+parser.add_argument('-d', '--dropout', type=int, default=30, help='dropout rate in percentage between 1 x 1 convolutions')
 parser.add_argument('-w', '--weight_decay', type=float, default=1e-4, help='weight decay')
-parser.add_argument('-f', '--data_dir', type=str, default='./', help='directory containing both
-                                          MNIST-Rot and MNIST12K dataset in separate folders')
-parser.add_argument('--train_on_mnist12k', action='store_true', help='whether to train on MNIST12K
-                                                                    or MNIST-Rot(False)')
+parser.add_argument('-f', '--data_dir', type=str, default='./', help='directory containing both MNIST-Rot and MNIST12K dataset in separate folders')
+parser.add_argument('--train_on_mnist12k', action='store_true', help='whether to train on MNIST12K or MNIST-Rot(False)')
 parser.add_argument('--lr', type=float, default=1e-2, help='initial learning rate')
 parser.add_argument('--batch_size', type=int, default=256, help='batch size')
 parser.add_argument('--epochs', type=int, default=2000, help='maximum number of epochs')
@@ -46,7 +42,7 @@ order = args.order
 data_dir = args.data_dir
 
 if args.train_on_mnist12k:
-  _, _, (x_test, y_test) = load_data(os.path.join(data_dir, mnist_rot_dir)
+  _, _, (x_test, y_test) = load_data(os.path.join(data_dir, mnist_rot_dir))
   (x_train, y_train), (x_val, y_val), _ = load_data(os.path.join(data_dir, mnist_12k_dir))
 else:
   (x_train, y_train), (x_val, y_val), (x_test, y_test) = load_data(os.path.join(data_dir, mnist_rot_dir))
@@ -87,7 +83,7 @@ def get_model(n_filters, weight_decay, dropout, lr, order=2):
   x += se2din_block(n_filters,n_filters,2.,8,order,dropout,weight_decay)(x)
   x += se2din_block(n_filters,n_filters,2.,8,order,dropout,weight_decay)(x)
   
-  x = se2din_block(n_filters,10,2.,8,2,0,bn_momentum,weight_decay)(x)
+  x = se2din_block(n_filters,10,2.,8,2,0,weight_decay)(x)
   
   features1 = tf.keras.models.Model(input_layer, x)
   

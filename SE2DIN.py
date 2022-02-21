@@ -46,7 +46,7 @@ class SE2DIN(tf.keras.layers.Layer):
     self.gy = [tf.constant(p, dtype=tf.float32) for p in self.gy]
 
     # Be sure to call this at the end
-    super(DISE2, self).build(input_shape)
+    super(SE2DIN, self).build(input_shape)
   
 
 
