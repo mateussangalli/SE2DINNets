@@ -7,7 +7,7 @@ from scipy.special import eval_hermitenorm
 
 class SE2DIN(tf.keras.layers.Layer):
   """
-  computes fundamental differnetial invariants of SE(2) on 2D images using Gaussian derivatives
+  computes fundamental differential invariants of SE(2) on 2D images using Gaussian derivatives
   """
   def __init__(self, sigma, width, order=2, padding='SAME',
              **kwargs):
