@@ -9,8 +9,8 @@ To download and prepare the datasets do:
 wget http://www.iro.umontreal.ca/~lisa/icml2007data/mnist.zip
 wget http://www.iro.umontreal.ca/~lisa/icml2007data/mnist_rotation_new.zip
 
-unzip mnist.zip
-unzip mnist_rotation_new.zip
+unzip mnist.zip -d mnist12k
+unzip mnist_rotation_new.zip -d mnist_rot
 
 python prepare_datasets.py
 ```
