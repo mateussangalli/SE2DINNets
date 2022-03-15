@@ -8,6 +8,7 @@ from scipy.special import eval_hermitenorm
 class SE2DIN(tf.keras.layers.Layer):
   """
   computes fundamental differential invariants of SE(2) on 2D images using Gaussian derivatives
+  for now works for order=2 and order=3
   """
   def __init__(self, sigma, width, order=2, padding='SAME',
              **kwargs):
@@ -86,7 +87,7 @@ class SE2DIN(tf.keras.layers.Layer):
           out.append((vx*ux + vy*uy) / (N + 1e-10))
         else:
           out.append((-vx*uy + vy*ux) / (N + 1e-10))
-      start += i+1
+      start = k
 
 
     out = tf.concat(out, 3)
