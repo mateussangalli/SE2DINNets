@@ -7,8 +7,7 @@ mnist12k_dir = 'mnist12k'
 mnist_rot_dir = 'mnist_rot'
 
 data_train_val = np.loadtxt(os.path.join(mnist12k_dir, 'mnist_train.amat'))
-data_test = np.loadtxt(os.path.join(mnist12k_dir, 'mnist_test.amat'))unzip mnist.zip
-unzip mnist_rotation_new.zip
+data_test = np.loadtxt(os.path.join(mnist12k_dir, 'mnist_test.amat'))
 
 images_train_val = data_train_val[:, :-1].reshape(-1,28,28,1)
 labels_train_val = data_train_val[:, -1]
