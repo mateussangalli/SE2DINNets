@@ -83,10 +83,8 @@ class SE2DIN(tf.keras.layers.Layer):
       for j in range(start, k):
         v = out[j]
         vx, vy = self._get_derivatives_1(v)
-        if j < k-1:
-          out.append((vx*ux + vy*uy) / (N + 1e-10))
-        else:
-          out.append((-vx*uy + vy*ux) / (N + 1e-10))
+        out.append((vx*ux + vy*uy) / (N + 1e-10))
+        out.append((-vx*uy + vy*ux) / (N + 1e-10))
       start = k
 
 
