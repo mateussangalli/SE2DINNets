@@ -11,7 +11,7 @@ $$I_{02} = \frac{1}{\lVert \nabla u \rVert^2} (u_{yy} u_x^2 - 2 u_x u_y u_{xy} +
 
 And their invariant derivatives. In the implementation, invariants after $I_{00}$ are normalized by multiplication with $\lVert \nabla u \rVert$.
 
-[^1]: The expressions for I_20 and I_02 in the paper where missing a factor of 2.
+[^1]: The expressions for I_20 and I_02 in the paper were missing a factor of 2.
 
 To download and prepare the datasets do:
 
